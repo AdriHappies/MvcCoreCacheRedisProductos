@@ -9,6 +9,11 @@
 <div>
     <h4>Producto</h4>
     <hr />
+    <a asp-controller="Productos"
+       asp-action="SeleccionarFavorito"
+       asp-route-id="@Model.IdProducto">
+        Seleccionar Favorito
+    </a>
     <dl class="row">
         <dt class = "col-sm-2">
             IdProducto
@@ -43,6 +48,5 @@
     </dl>
 </div>
 <div>
-    
     <a asp-action="Index">Back to List</a>
 </div>
