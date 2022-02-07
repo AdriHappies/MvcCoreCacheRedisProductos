@@ -1,0 +1,43 @@
+﻿@model IEnumerable<MvcCoreCacheRedisProductos.Models.Producto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Productos Cache Redis</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Precio
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @item.Nombre
+            </td>
+            <td>
+                @item.Precio
+            </td>
+            <td>
+                <a asp-controller="Productos"
+                   asp-action="Details"
+                   asp-route-id="@item.IdProducto">
+                    Detalles
+                </a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
